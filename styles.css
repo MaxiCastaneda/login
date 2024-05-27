@@ -1,0 +1,319 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #ccc, #5cb85c);
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.navbar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+.navbar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1500; /* Asegura que esté por encima del contenido */
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin-top: 80px; /* Espacio para la barra de navegación */
+}
+
+.login-container img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-container input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.password-container button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.password-container button:focus {
+    outline: none;
+}
+
+.password-container button i {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.password-container button.active i {
+    color: #333;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.login-container button:hover {
+    background-color: #4cae4c;
+}
+
+.sign-in-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.sign-in-button:hover {
+    background-color: #000;
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer p {
+    margin: 0;
+    color: #333;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .login-container img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .login-container input,
+    .password-container input {
+        padding: 8px;
+    }
+
+    .password-container button {
+        width: 35px; /* Reducir el ancho para dispositivos móviles */
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1500; /* Asegura que esté por encima del contenido */
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 55px; /* Ajustar según sea necesario */
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 10px 0;
+        transition: all 0.3s ease;
+        z-index: 1400; /* Asegura que esté por encima del contenido */
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .login-container img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .login-container input,
+    .password-container input {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    .login-container button,
+    .sign-in-button {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .password-container button {
+        width: 30px; /* Reducir el ancho para dispositivos móviles */
+    }
+
+    .navbar .brand {
+        font-size: 20px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .login-container {
+        width: 400px;
+    }
+
+    .login-container button,
+    .sign-in-button {
+        font-size: 18px;
+    }
+
+    .password-container button {
+        width: 50px;
+    }
+}

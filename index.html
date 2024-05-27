@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="brand">Logo</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <img src="images/eye.png" alt="Logo">
+        <form>
+            <input type="text" placeholder="Usuario">
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button type="button" id="togglePassword"><i class="fas fa-eye"></i></button>
+            </div>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            <button type="submit">Iniciar sesión</button>
+            <button type="submit" class="sign-in-button">Sign in</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Nombre de la empresa</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
