@@ -1,8 +1,9 @@
 :root {
-    --main-white: #e9d8a6;
-    --main-black: #e9d8a6;
-    --main-green: #e9d8a6;
+    --main-white: #fefcfb;
+    --main-black: #081c15;
+    --main-green: #16db65;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -10,19 +11,21 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(90deg, black, #5cb85c);
+    font-family: Helvetica, sans-serif;
+    background: linear-gradient(90deg, var(--main-black), var(--main-green));
     background-size: 200% 200%;
-    animation: gradient-animation 5s ease infinite;
+    animation: gradient-animation 15s ease infinite;
 }
 
 @keyframes gradient-animation {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -30,14 +33,13 @@ body {
 
 .navbar {
     width: 100%;
-    background: rgba(46, 42, 42, 0.75); /* Fondo semi-transparente */
-    color: white;
+    color: var(--main-white);
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
-    transition: background 0.3s;
+    z-index: 1;
 }
 
 .navbar-container {
@@ -51,7 +53,7 @@ body {
 .navbar .brand {
     font-size: 24px;
     font-weight: bold;
-    color: #f4f0f0;
+    color: var(--main-white);
     text-decoration: none;
 }
 
@@ -68,7 +70,7 @@ body {
 
 .navbar .nav-links a {
     text-decoration: none;
-    color: #f4f0f0;
+    color: var(--main-white);
     font-size: 16px;
 }
 
@@ -76,15 +78,15 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    z-index: 1500; /* Asegura que esté por encima del contenido */
+    z-index: 10;
 }
 
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: #f4f0f0;
     margin: 4px 0;
     transition: 0.4s;
+    background-color: var(--main-white);
 }
 
 .login-container {
@@ -94,7 +96,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 300px;
-    margin-top: 80px; /* Espacio para la barra de navegación */
+    margin-top: 80px;
+    /* Espacio para la barra de navegación */
 }
 
 .login-container img {
@@ -115,7 +118,8 @@ body {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
 }
 
 .password-container {
@@ -131,7 +135,8 @@ body {
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
 }
 
 .password-container button {
@@ -152,7 +157,7 @@ body {
 
 .password-container button i {
     font-size: 18px;
-    color: #ccc;
+    color: red;
 }
 
 .password-container button.active i {
@@ -169,11 +174,12 @@ body {
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
 }
 
 .login-container button:hover {
-    background-color: #4cae4c;
+    background-color: var(--main-green);
 }
 
 .sign-in-button {
@@ -181,29 +187,28 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: black;
-    color: black;
     font-size: 16px;
     cursor: pointer;
     margin-top: 10px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el ancho total */
 }
 
 .sign-in-button:hover {
-    background-color: #000;
+    background-color: green;
 }
 
 .forgot-password {
     display: block;
-    margin-top: 10px;
-    color: #333;
+    color: var(--main-white);
     text-decoration: none;
     font-size: 14px;
+    margin-bottom: 1rem;
 }
 
 .footer {
     width: 100%;
-    background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    background: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 10px 0;
     position: fixed;
@@ -213,7 +218,7 @@ body {
 
 .footer p {
     margin: 0;
-    color: #333;
+    color: var(--main-white);
 }
 
 /* Media Queries for responsiveness */
@@ -234,12 +239,15 @@ body {
     }
 
     .password-container button {
-        width: 35px; /* Reducir el ancho para dispositivos móviles */
+        width: 35px;
+        /* Reducir el ancho para dispositivos móviles */
     }
 
     .menu-toggle {
         display: flex;
-        z-index: 1500; /* Asegura que esté por encima del contenido */
+        z-index: 1500;
+        /* Asegura que esté por encima del contenido */
+
     }
 
     .navbar .nav-links {
@@ -248,20 +256,19 @@ body {
         align-items: center;
         width: 100%;
         position: absolute;
-        top: 55px; /* Ajustar según sea necesario */
-        background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        top: 55px;
         left: 0;
         right: 0;
         margin: 0 auto;
-        padding: 10px 0;
+        padding: 0px 0;
         transition: all 0.3s ease;
-        z-index: 1400; /* Asegura que esté por encima del contenido */
+        z-index: 10;
+        /* Asegura que esté por encima del contenido */
     }
 
     .navbar .nav-links.active {
         display: flex;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
     .navbar .nav-links li {
@@ -297,7 +304,8 @@ body {
     }
 
     .password-container button {
-        width: 30px; /* Reducir el ancho para dispositivos móviles */
+        width: 30px;
+        /* Reducir el ancho para dispositivos móviles */
     }
 
     .navbar .brand {
