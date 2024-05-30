@@ -133,7 +133,9 @@ body {
     margin: 10px 0;
     border-radius: 5px;
     background-color: var(--main-green);
-    cursor: pointer;
+    display: flex;          /* Asegurar que el botón sea un contenedor flex */
+    justify-content: center; /* Centrar el icono horizontalmente */
+    align-items: center;    /* Centrar el icono verticalmente */
 }
 
 .password-container button:focus {
@@ -143,8 +145,8 @@ body {
 .password-container button i {
     font-size: 18px;
     color: var(--main-white);
-
-}
+    position: relative;
+    }
 
 
 .login-in-button {
@@ -153,7 +155,6 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    cursor: pointer;
     margin-top: 10px;
     box-sizing: border-box;
     background-color: var(--main-green);
