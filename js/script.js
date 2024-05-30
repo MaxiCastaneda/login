@@ -14,5 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
         togglePassword.classList.toggle('active');
+
+        // Alternar entre el icono de ojo abierto y cerrado
+        const icon = togglePassword.querySelector('i');
+        if (icon.classList.contains('fa-eye')) {
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
     });
 });

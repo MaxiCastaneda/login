@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Animated login page. Log in with your username or email.">
+    <meta name="keywords" content="login, sign in, user, email, services">
+    <meta name="robots" content="index, follow">
     <title>Login</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/4d5fbba453.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
     <div class="navbar">
         <div class="navbar-container">
-            <a href="#" class="brand">Logo & brand name</a>
+            <a href="#" class="brand">Welcome</a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#">Home</a></li>
@@ -30,20 +33,20 @@
     <div class="login-container">
         <img src="images/eye.png" alt="Logo">
         <form>
-            <input type="text" placeholder="User name or e-mail">
+            <input type="text" placeholder="User name or e-mail" aria-label="User name or e-mail">
             <div class="password-container">
-                <input type="password" id="password" placeholder="Password">
-                <button type="button" id="togglePassword"><i class="fas fa-eye"></i></button>
+                <input type="password" id="password" placeholder="Password" aria-label="Password">
+                <button type="button" id="togglePassword" aria-label="Show/Hide Password"><i class="fas fa-eye"></i></button>
             </div>
             <a href="#" class="forgot-password">¿Forgot your password?</a>
-            <button type="submit">Login</button>
-            <button type="submit" class="sign-in-button">Sign in</button>
+            <button type="submit" class="login-in-button" aria-label="Login">Login</button>
+            <button type="submit" class="sign-in-button" aria-label="Sign in">Sign in</button>
         </form>
     </div>
 
-    <div class="footer">
+    <footer class="footer">
         <p> - IN CODING WE TRUST - </p>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
