@@ -116,7 +116,7 @@ body {
 }
 
 .password-container input {
-    width: calc(100% - 3.5rem);
+    width: 84%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid var(--main-white);
@@ -126,6 +126,7 @@ body {
 
 .password-container button {
     position: absolute;
+    width: 15%;
     right: 0;
     top: 0;
     bottom: 0;
@@ -205,19 +206,16 @@ body {
     }
 
     .login-container img {
-        width: 80px;
-        height: 80px;
+        width: 15rem;
+        height: 15rem;
     }
-
-    .login-container input,
+   
     .password-container input {
-        padding: 8px;
+        
+        
     }
 
-    .password-container button {
-        width: 35px;
-        /* Reducir el ancho para dispositivos móviles */
-    }
+    
 
     .menu-toggle {
         display: flex;
@@ -263,26 +261,23 @@ body {
     }
 
     .login-container img {
-        width: 60px;
-        height: 60px;
+        width: 10rem;
+        height: 10rem;
     }
 
-    .login-container input,
+    
     .password-container input {
-        padding: 6px;
+        padding: 8px;
         font-size: 14px;
+        
     }
 
     .login-container button,
     .sign-in-button {
-        padding: 6px;
+        padding: 1rem;
         font-size: 12px;
     }
 
-    .password-container button {
-        width: 30px;
-        /* Reducir el ancho para dispositivos móviles */
-    }
 
     .navbar .brand {
         font-size: 20px;
