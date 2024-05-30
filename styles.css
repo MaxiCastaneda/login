@@ -134,9 +134,12 @@ body {
     margin: 10px 0;
     border-radius: 5px;
     background-color: var(--main-green);
-    display: flex;          /* Asegurar que el botón sea un contenedor flex */
-    justify-content: center; /* Centrar el icono horizontalmente */
-    align-items: center;    /* Centrar el icono verticalmente */
+    display: flex;
+    /* Asegurar que el botón sea un contenedor flex */
+    justify-content: center;
+    /* Centrar el icono horizontalmente */
+    align-items: center;
+    /* Centrar el icono verticalmente */
 }
 
 .password-container button:focus {
@@ -147,7 +150,7 @@ body {
     font-size: 18px;
     color: var(--main-white);
     position: relative;
-    }
+}
 
 
 .login-in-button {
@@ -209,13 +212,6 @@ body {
         width: 15rem;
         height: 15rem;
     }
-   
-    .password-container input {
-        
-        
-    }
-
-    
 
     .menu-toggle {
         display: flex;
@@ -265,11 +261,10 @@ body {
         height: 10rem;
     }
 
-    
+
     .password-container input {
         padding: 8px;
         font-size: 14px;
-        
     }
 
     .login-container button,
