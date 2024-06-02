@@ -31,9 +31,18 @@
     </div>
 
     <div class="login-container">
-        <img src="images/eye.png" alt="Logo">
+        <div class="eye-icon-container-triangle">
+            <div class="eye-icon-container">
+                <button type="button" id="togglePassword" aria-label="Show/Hide Password">
+                    <i class="fas fa-eye" id="eyeIcon"></i>
+                </button>
+            </div>
+        </div>
+
         <form>
-            <input type="text" placeholder="User name or e-mail" aria-label="User name or e-mail" id="User name input">
+            <label for="username-input" class="label">User</label>
+            <input type="email" placeholder="User name or e-mail" aria-label="User name or e-mail" id="username-input">
+            <label for="password" class="label">Password</label>
             <div class="password-container">
                 <input type="password" id="password" placeholder="Password" aria-label="Password">
                 <button type="button" id="togglePassword" aria-label="Show/Hide Password"><i class="fas fa-eye"></i></button>
@@ -48,6 +57,6 @@
         <p> - IN CODING WE TRUST - </p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
