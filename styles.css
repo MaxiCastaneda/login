@@ -1,21 +1,19 @@
 :root {
     --main-white: #fefcfb;
-    --main-black: #081c15;
+    --main-black: #1D1F20;
     --main-green: #008000;
 }
 
 body {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: Helvetica, sans-serif;
-    background: var(--main-green);
     background: radial-gradient(circle, var(--main-green) 10%, var(--main-black) 50%);
     backdrop-filter: blur(15rem);
-}
+    font-family: Helvetica, sans-serif;
+    }
 
 .navbar {
     width: 100%;
@@ -76,27 +74,107 @@ body {
 }
 
 .login-container {
-    background: rgba(46, 42, 42, 0.75);
-    backdrop-filter: blur(10px);
+    --borderWidth: 5px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: var(--borderWidth);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
-    margin-top: 80px;
-    /* Espacio para la barra de navegación */
+    height: 78%;
+    width: 30rem;
+    margin: 4rem auto;
+    margin-top: 4rem;
+    margin-bottom: 3.5rem;
+    
+
+  }
+  .login-container:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #fefcfb, #008000, #008000, #fefcfb, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 10s ease alternate infinite;
+    background-size: 300% 300%;
+    filter: blur(10px);
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+
+.eye-icon-container-triangle {
+    position: relative;
+    width: 15rem; /* Ancho del triángulo */
+    height: 15rem; /* Alto del triángulo */
+    margin: 0 auto; /* Centra el contenedor */
+    overflow: hidden; /* Para ocultar partes del triángulo secundario */
 }
 
-.login-container img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
+
+
+
+
+.eye-icon-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Coloca el contenido del ojo sobre el triángulo */
 }
+
+.eye-icon-container button {
+    width: 40px; /* Ajusta el tamaño del botón del ojo */
+    height: 40px; /* Ajusta el tamaño del botón del ojo */
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.eye-icon-container button:focus {
+    outline: none;
+}
+
+.eye-icon-container i {
+    font-size: 8rem; /* Ajusta el tamaño del ícono */
+    color: var(--main-white);
+    position: relative;
+}
+
+
+
 
 .login-container form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    border: 1px solid #1D1F20;
+    background-color: #1D1F20;
+
+    
+}
+
+.label {
+    justify-content: left;
+    font-size: 14px;
+    text-align: left;
+    color: var(--main-white);
 }
 
 .login-container input {
@@ -168,7 +246,7 @@ body {
 .sign-in-button {
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 1px solid var(--main-green);
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
