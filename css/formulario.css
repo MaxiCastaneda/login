@@ -1,52 +1,313 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+
+:root {
+    --main-white: #fefcfb;
+    --main-black: #1D1F20;
+    --main-green: #008000;
+    --main-blue: #5073b8;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    background: radial-gradient(circle, var(--main-green) 10%, var(--main-black) 50%);
+    backdrop-filter: blur(15rem);
+    font-family: 'Raleway';
+}
+
+
+.navbar {
+    width: 100%;
+    color: var(--main-white);
+    background: rgba(0, 0, 0, .5);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.navbar-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--main-white);
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: var(--main-white);
+    font-size: 16px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    transition: 0.4s;
+    background-color: var(--main-white);
 }
 
 .container {
-    background-color: #fff;
+    --borderWidth: 5px;
+    background: var(--main-black);
+    position: relative;
+    border-radius: var(--borderWidth);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    text-align: left;
+    height: fit-content;
+    width: 40%;
+    margin: 3rem auto;
+    color: var(--main-white);
+}
+
+.container:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #fefcfb, #008000, #008000, #fefcfb, #5073b8, #1098ad, #07b39b, #6fba82);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 10s ease alternate infinite;
+    background-size: 300% 300%;
+    filter: blur(10px);
+  }
+  
+  
+  @keyframes animatedgradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+  .eye-icon-container-top {
+    position: relative;
+    width: 12rem; 
+    height: 12rem;
+    margin: 0 auto; /* Centra el contenedor */
+    overflow: hidden; /* Para ocultar partes del triángulo secundario */
+}
+  .eye-icon-container {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 4px;
+    background: linear-gradient(60deg, #fefcfb, #008000, #008000, #fefcfb, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 10s ease alternate infinite;
+    background-size: 300% 300%;
+    }
+
+.eye-icon-container button {
+    width: 40px; /* Ajusta el tamaño del botón del ojo */
+    height: 40px; /* Ajusta el tamaño del botón del ojo */
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.eye-icon-container button:focus {
+    outline: none;
+}
+
+.eye-icon-container i {
+    font-size: 8rem; /* Ajusta el tamaño del ícono */
+    position: relative;
+    color: var(--main-black); 
+    z-index: 2;  
 }
 
 h2 {
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
+    display: none;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+    font-size: 14px;
+    color: var(--main-white);
 }
+
 
 input {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid var(--main-blue);
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745;
-    border: none;
+    background-color: var(--main-green);
+    border: 1px solid var(--main-blue);
     border-radius: 4px;
-    color: #fff;
+    color: var(--main-black);
     font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: var(--main-green);
+}
+
+.footer {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--main-white);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 60%;
+        padding: 15px;
+    }
+
+    .container img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1500;
+        /* Asegura que esté por encima del contenido */
+
+    }
+
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0px 0;
+        transition: all 0.3s ease;
+        z-index: 10;
+        /* Asegura que esté por encima del contenido */
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .login-container img {
+        width: 10rem;
+        height: 10rem;
+    }
+
+
+    .password-container input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .container button,
+    .sign-in-button {
+        padding: 1rem;
+        font-size: 12px;
+    }
+
+
+    .navbar .brand {
+        font-size: 20px;
+    }
+
+    .navbar .nav-links a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 400px;
+        height: fit-content;
+    }
+
+    .container button,
+    .sign-in-button {
+        font-size: 18px;
+    }
+
+    .password-container button {
+        width: 50px;
+    }
 }

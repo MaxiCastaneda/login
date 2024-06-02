@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const usernameInput = document.getElementById('username-input');
     const togglePasswordButtons = document.querySelectorAll('#togglePassword');
     const eyeIcon = document.getElementById('eyeIcon');
+    const modal = document.getElementById('customAlert');
+    const closeButton = document.querySelector('.close-button');
+    const signInButton = document.getElementById('signInButton'); // Selecciona el botón "Sign in"
 
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
@@ -50,4 +53,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Establecer el ícono por defecto al cargar la página
     eyeIcon.classList.add('fa-face-grimace');
+
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    function showModal() {
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    usernameInput.addEventListener('blur', () => {
+        const email = usernameInput.value;
+        if (email && !validateEmail(email)) {
+            showModal();
+        }
+    });
+
+    closeButton.addEventListener('click', closeModal);
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
+
+    // Añadir el event listener para el botón "Sign in"
+    signInButton.addEventListener('click', () => {
+        window.location.href = 'formulario.html'; // Redirigir a la página "formulario.html"
+    });
 });
