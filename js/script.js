@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const passwordInput = document.getElementById('password');
+    const usernameInput = document.getElementById('username-input');
     const togglePasswordButtons = document.querySelectorAll('#togglePassword');
     const eyeIcon = document.getElementById('eyeIcon');
 
@@ -27,17 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateEyeIcon() {
-        if (passwordInput === document.activeElement && passwordInput.value.length > 0) {
-            eyeIcon.classList.remove('fa-eye');
-            eyeIcon.classList.add('fa-eye-slash');
+        if (usernameInput === document.activeElement && usernameInput.value.length > 0) {
+            eyeIcon.classList.remove('fa-face-grimace', 'fa-face-rolling-eyes');
+            eyeIcon.classList.add('fa-face-grin-wink');
+        } else if (passwordInput === document.activeElement && passwordInput.value.length > 0) {
+            eyeIcon.classList.remove('fa-face-grimace', 'fa-face-grin-wink');
+            eyeIcon.classList.add('fa-face-rolling-eyes');
         } else {
-            eyeIcon.classList.remove('fa-eye-slash');
-            eyeIcon.classList.add('fa-eye');
+            eyeIcon.classList.remove('fa-face-grin-wink', 'fa-face-rolling-eyes');
+            eyeIcon.classList.add('fa-face-grimace');
         }
     }
 
-    // Listen for input events and focus events on the password input field
+    usernameInput.addEventListener('input', updateEyeIcon);
+    usernameInput.addEventListener('focus', updateEyeIcon);
+    usernameInput.addEventListener('blur', updateEyeIcon);
+
     passwordInput.addEventListener('input', updateEyeIcon);
     passwordInput.addEventListener('focus', updateEyeIcon);
     passwordInput.addEventListener('blur', updateEyeIcon);
+
+    // Establecer el ícono por defecto al cargar la página
+    eyeIcon.classList.add('fa-face-grimace');
 });
