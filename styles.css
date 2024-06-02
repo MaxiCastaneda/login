@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+
 :root {
     --main-white: #fefcfb;
     --main-black: #1D1F20;
     --main-green: #008000;
+    --main-blue: #5073b8;
 }
 
 body {
@@ -12,7 +16,7 @@ body {
     margin: 0;
     background: radial-gradient(circle, var(--main-green) 10%, var(--main-black) 50%);
     backdrop-filter: blur(15rem);
-    font-family: Helvetica, sans-serif;
+    font-family:'Raleway';
     }
 
 .navbar {
@@ -117,7 +121,7 @@ body {
   }
 
 
-.eye-icon-container-triangle {
+.eye-icon-container-top {
     position: relative;
     width: 15rem; /* Ancho del triángulo */
     height: 15rem; /* Alto del triángulo */
@@ -125,17 +129,20 @@ body {
     overflow: hidden; /* Para ocultar partes del triángulo secundario */
 }
 
-
-
-
-
 .eye-icon-container {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Coloca el contenido del ojo sobre el triángulo */
-}
+    z-index: 2;
+    padding: 4px;
+    background: linear-gradient(60deg, #fefcfb, #008000, #008000, #fefcfb, #5073b8, #1098ad, #07b39b, #6fba82);
+    animation: animatedgradient 10s ease alternate infinite;
+    background-size: 300% 300%;
+    }
 
 .eye-icon-container button {
     width: 40px; /* Ajusta el tamaño del botón del ojo */
@@ -154,12 +161,9 @@ body {
 
 .eye-icon-container i {
     font-size: 8rem; /* Ajusta el tamaño del ícono */
-    color: var(--main-white);
     position: relative;
+    color: var(--main-black);   
 }
-
-
-
 
 .login-container form {
     display: flex;
@@ -181,7 +185,7 @@ body {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid var(--main-white);
+    border: 2px solid var(--main-blue);
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -197,7 +201,7 @@ body {
     width: 84%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid var(--main-white);
+    border: 2px solid var(--main-blue);
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -246,7 +250,7 @@ body {
 .sign-in-button {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--main-green);
+    border: 1px solid var(--main-blue);
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;

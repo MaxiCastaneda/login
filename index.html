@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/4d5fbba453.js" crossorigin="anonymous" defer></script>
 </head>
+
 <body>
     <div class="navbar">
         <div class="navbar-container">
@@ -31,11 +33,10 @@
     </div>
 
     <div class="login-container">
-        <div class="eye-icon-container-triangle">
+        <div class="eye-icon-container-top">
+            
             <div class="eye-icon-container">
-                <button type="button" id="togglePassword" aria-label="Show/Hide Password">
-                    <i class="fas fa-eye" id="eyeIcon"></i>
-                </button>
+                <i class="fa-solid fa-face-grimace" id="eyeIcon"></i>
             </div>
         </div>
 
@@ -45,7 +46,8 @@
             <label for="password" class="label">Password</label>
             <div class="password-container">
                 <input type="password" id="password" placeholder="Password" aria-label="Password">
-                <button type="button" id="togglePassword" aria-label="Show/Hide Password"><i class="fas fa-eye"></i></button>
+                <button type="button" id="togglePassword" aria-label="Show/Hide Password"><i
+                        class="fas fa-eye"></i></button>
             </div>
             <a href="#" class="forgot-password">¿Forgot your password?</a>
             <button type="submit" class="login-in-button" aria-label="Login">Login</button>
@@ -59,4 +61,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>
